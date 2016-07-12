@@ -226,6 +226,26 @@ class Sentence {
     change_tense(this, 'future');
     return this;
   }
+  // john walked quickly -> how did john walk? what did john do? Who walked quickly? Did John walk quickly?
+
+  to_question(typeOfQuestion) {
+    if (typeOfQuestion === 'yesOrNo') {
+      // Subject, verb, object
+      // reorder sentence.
+      // John walks the dog.
+      // John -> Subject
+      // walk -> verb
+      // the dog -> object
+      // Does -> present-tense question word
+      // Does subject verb object?
+      // Does John walk the dog
+      console.log(`Subject is ${this.nouns()[0].text}`)
+      console.log(`Subject is ${this.nouns()[1].text}`)
+    }
+  }
+
+
+
   strip_conditions() {
     this.terms = this.terms.filter((t, i) => {
       //remove preceding condition
